@@ -3,6 +3,8 @@
  * This file is a test harness for the
  * PATH table.  It just parses the PATH environment
  * variable and pretty-prints the table contents.
+ *
+ * Do not change this file.
  */
 
 #include "thsh.h"

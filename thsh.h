@@ -1,6 +1,8 @@
 #ifndef THSH_H
 #define THSH_H
 
+/* Do not change this file */
+
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>

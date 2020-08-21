@@ -4,6 +4,8 @@
  * parser.  It takes in commands from standard in,
  * passes them to the parser, and outputs the parsed
  * version in a standardized format for unit testing.
+ *
+ * Do not change this file.
  */
 #include "thsh.h"
 
