@@ -136,7 +136,8 @@ int read_one_line(int input_fd, char *buf, size_t size) {
  * length: the length of the string in inbuf.  Should be
  *         less than the size of inbuf.
  *
- * commands: a pre-populated
+ * commands: a two-dimensional array of character pointers, allocated by the caller, which
+ *           this function populates.
  *
  *
  * return value: Number of entries populated in commands (1+, not counting the NULL),
