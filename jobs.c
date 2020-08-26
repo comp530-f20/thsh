@@ -56,3 +56,34 @@ void print_path_table() {
   printf("===== End Path Table =====\n");
 }
 
+/* Given the command listed in args,
+ * try to execute it.
+ *
+ * If the first argument starts with a '.'
+ * or a '/', it is an absolute path and can
+ * execute as-is.
+ *
+ * Otherwise, search each prefix in the path_table
+ * in order to find the path to the binary.
+ *
+ * Then fork a child and pass the path and the additional arguments
+ * to execve() in the child.  Wait for exeuction to complete
+ * before returning.
+ *
+ * stdin is a file handle to be used for standard in.
+ * stdout is a file handle to be used for standard out.
+ *
+ * If stdin and stdout are not 0 and 1, respectively, they will be
+ * closed in the parent process before this function returns.
+ *
+ * wait, if true, indicates that the parent should wait on the child to finish
+ *
+ * Returns 0 on success, -errno on failure
+ */
+int run_command(char *args[MAX_ARGS], int stdin, int stdout, bool wait) {
+  /* Lab 1: Your code here */
+  int rv = 0;
+
+  return rv;
+}
+
