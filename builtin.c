@@ -26,6 +26,7 @@ int handle_exit(char *args[MAX_ARGS], int stdin, int stdout) {
 }
 
 
+
 static struct builtin builtins[] = {{"cd", handle_cd},
 				    {"exit", handle_exit},
 				    {'\0', NULL}};

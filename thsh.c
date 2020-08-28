@@ -69,7 +69,6 @@ int main(int argc, char **argv, char **envp) {
       continue;
     }
 
-
     // Just echo the command line for now
     // file descriptor 1 -> writing to stdout
     // print the whole cmd string (write number of
@@ -82,6 +81,16 @@ int main(int argc, char **argv, char **envp) {
 
     // In Lab 1, you will need to add code to actually run the commands,
     // add debug printing, and handle redirection and pipelines, as
+    // explained in the handout.
+    //
+    // For now, ret will be set to zero; once you implement command handling,
+    // ret should be set to the return from the command.
+    ret = 0;
+
+    // Do NOT change this if/printf - it is used by the autograder.
+    if (ret) {
+      printf("Failed to run command - error %d\n", ret);
+    }
 
   }
 
