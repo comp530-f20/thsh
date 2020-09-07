@@ -64,7 +64,7 @@ int main(int argc, char **argv, char **envp) {
 
     // Pass it to the parser
     pipeline_steps = parse_line(buf, length, parsed_commands, &infile, &outfile);
-    if (pipeline_steps <= 0) {
+    if (pipeline_steps < 0) {
       printf("Parsing error.  Cannot execute command. %d\n", -pipeline_steps);
       continue;
     }

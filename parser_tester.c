@@ -34,7 +34,7 @@ int main(int argc, char **argv, char **envp) {
     // Pass it to the parser
     ret = parse_line(buf, length, parsed_commands, &infile, &outfile);
 
-    if (ret == 0) {
+    if (ret == -ENOSYS) {
       printf("parse_line (probably) not implemented.  Giving up.\n");
       break;
     } else if (ret < 0) {

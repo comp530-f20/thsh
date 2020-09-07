@@ -141,12 +141,15 @@ int read_one_line(int input_fd, char *buf, size_t size) {
  *
  *
  * return value: Number of entries populated in commands (1+, not counting the NULL),
- *               or -errno on failure
+ *               or -errno on failure.
+ *
+ *               In the case of a line with no actual commands (e.g.,
+ *               a line with just comments), return 0.
  */
 int parse_line (char *inbuf, size_t length,
 		char *commands [MAX_PIPELINE][MAX_ARGS],
 		char **infile, char **outfile) {
 
   // Lab 0: Your code here
-  return 0;
+  return -ENOSYS;
 }
