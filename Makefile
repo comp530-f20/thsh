@@ -19,7 +19,6 @@ test_env: test_env.c $(COMMON_FILES)
 	gcc $(CFLAGS) test_env.c $(COMMON_FILES) -o test_env
 
 update:
-	git checkout master
 	git pull https://github.com/comp530-f20/thsh.git lab0
 
 
