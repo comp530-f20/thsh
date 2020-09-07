@@ -24,6 +24,13 @@ int main(int argc, char **argv, char **envp) {
     char *infile = NULL;
     char *outfile = NULL;
 
+    // Reset memory from the last iteration
+    for(int i = 0; i < MAX_PIPELINE; i++) {
+      for(int j = 0; j < MAX_ARGS; j++) {
+	parsed_commands[i][j] = NULL;
+      }
+    }
+
     // Read a line of input
     length = read_one_line(0, buf, MAX_INPUT);
     if (length <= 0) {
