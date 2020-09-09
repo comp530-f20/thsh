@@ -55,7 +55,7 @@ int read_one_line(int input_fd, char *buf, size_t size) {
    *      increment count and cursor
    */
   for (rv = 1, count = 0, cursor = buf, last_char = 1;
-       rv && (++count < (size - 1)) && (last_char != '\n'); cursor++) {
+       rv && (last_char != '\n') && (++count < (size - 1)); cursor++) {
 
     // read one character
     // file descriptor 0 -> reading from stdin
