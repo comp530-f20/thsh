@@ -1,10 +1,8 @@
 ## Do not change this file
-
 TARGETS=parser_tester test_env
 
-COMMON_FILES=thsh.h parse.c builtin.c jobs.c
-
-LAB_FILES=$(COMMON_FILES) parser_tester.c test_env.c
+HEADERS=thsh.h
+OBJECTS= parse.o builtin.o jobs.o
 
 CFLAGS= -Wall -Werror -g
 
@@ -12,15 +10,18 @@ CFLAGS= -Wall -Werror -g
 
 all: $(TARGETS)
 
-parser_tester: parser_tester.c $(COMMON_FILES)
-	gcc $(CFLAGS) parser_tester.c $(COMMON_FILES) -o parser_tester
+%.o: %.c $(HEADERS)
+	gcc $(CFLAGS) -c -o $@ $<
 
-test_env: test_env.c $(COMMON_FILES)
-	gcc $(CFLAGS) test_env.c $(COMMON_FILES) -o test_env
+parser_tester: parser_tester.c $(OBJECTS) $(HEADERS)
+	gcc $(CFLAGS) parser_tester.c $(OBJECTS) -o parser_tester
+
+test_env: test_env.c $(OBJECTS)  $(HEADERS)
+	gcc $(CFLAGS) test_env.c $(OBJECTS) -o test_env
 
 update:
 	git pull https://github.com/comp530-f20/thsh.git lab0
 
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS) $(OBJECTS)

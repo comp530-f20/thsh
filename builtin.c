@@ -29,7 +29,7 @@ int handle_exit(char *args[MAX_ARGS], int stdin, int stdout) {
 
 static struct builtin builtins[] = {{"cd", handle_cd},
 				    {"exit", handle_exit},
-				    {'\0', NULL}};
+				    {NULL, NULL}};
 
 /* This function checks if the command (args[0]) is a built-in.
  * If so, call the appropriate handler, and return 1.
